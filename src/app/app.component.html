@@ -1,10 +1,2 @@
-<div class="text-layout">
-    <h1>{{nombre | titlecase }}</h1>
-    <h1>{{valor|number}}</h1>
-    <h1>{{obj|json}}</h1>
-</div>
-<button pButton type="button" label="Mostrar" class="p-button-raised p-button-rounded" icon="pi pi-check"
-    iconPos="right" (click)="mostrarNombre()"></button>
-<p-card [header]="nombre | titlecase" subheader="Holi" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
-    <p>Holi jeje</p>
-</p-card>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
