@@ -8,8 +8,10 @@ import { AppRouterModule } from './app-router.module';
 import { VentasModule } from './ventas/ventas.module';
 
 import LocaleEs  from "@angular/common/locales/es-CO";
+import LocaleIt from "@angular/common/locales/it";
 import {registerLocaleData} from "@angular/common"
 registerLocaleData(LocaleEs);//Se registra el idioma español
+registerLocaleData(LocaleIt);//Se registra el idioma italiano
  
 @NgModule({
   declarations: [
