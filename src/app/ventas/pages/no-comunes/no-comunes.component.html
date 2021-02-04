@@ -5,13 +5,56 @@
 <div class="p-grid">
     <div class="p-col p-md-6">
         <p-fieldset legend="i18nSelect Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
-            Content
+            <p>
+                Saludos {{nombre}}, es un placer {{ genero | i18nSelect: invitacionMapa}} a nuestro evento.
+            </p>
+            <button pButton pRipple (click)="cambiarCliente()" icon="pi pi-user"
+                class="p-button-raised p-button-rounded" type="button" label="Cambiar Género"></button>
         </p-fieldset>
-        
-</div>
-<div class="p-col p-md-6">
-    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
-        Content
-    </p-fieldset>
-    
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
+            <p>
+                Actualmente {{clientes.length | i18nPlural: clientesMapa}}.
+            </p>
+            <button pButton pRipple (click)="borrarCliente()" badgeClass="p-badge-info"
+                class="p-button-raised p-button-rounded" type="button" label="Borrar Cliente"></button>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
+            <b>Original</b>
+            <pre>{{clientes}}</pre>
+            <b>slice:0:2</b>
+            <pre>{{clientes | slice:0:2}}</pre>
+            <b>slice:1:2</b>
+            <pre>{{clientes | slice:1:2}}</pre>
+            <b>slice:0:3</b>
+            <pre>{{clientes | slice:0:3}}</pre>
+
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
+            <pre>{{heroes | json}}</pre>
+
+
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue"> <b>{{item.key | titlecase}}:</b> {{item.value}} </li>
+            </ul>
+
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="KAsync Pipe" [toggleable]="true" [transitionOptions]="'200ms'">
+            <pre *ngIf="!(myObservable| async)">Cargando observable</pre>
+            <pre>{{myObservable| async}}</pre>
+            <pre *ngIf="!(valorPromise| async)">Cargando información</pre>
+            <pre>{{valorPromise| async}}</pre>
+        </p-fieldset>
+    </div>
 </div>
