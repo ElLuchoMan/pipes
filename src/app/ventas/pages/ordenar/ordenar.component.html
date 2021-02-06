@@ -22,14 +22,14 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>Nombre</th>
-                    <th>Vuela</th>
+                    <th>Vuela?</th>
                     <th>Color</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-heroe>
                 <tr>
                     <td>{{heroe.nombre}}</td>
-                    <td>{{heroe.vuela}}</td>
+                    <td>{{heroe.vuela | vuela | titlecase}}</td>
                     <td>{{heroe.color}}</td>
                 </tr>
             </ng-template>
